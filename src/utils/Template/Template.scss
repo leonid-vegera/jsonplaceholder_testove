@@ -1,0 +1,44 @@
+.data {
+  min-width: 300px;
+  width: 100%;
+  padding: 50px 40px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  border: 3px white solid;
+  box-sizing: border-box;
+
+  &__header {
+    font-size: 1.6em;
+    margin: 0;
+
+    &::after {
+      content: '';
+      display: block;
+      height: 3px;
+      background-color: #2a2626;
+    }
+  }
+
+  &__list {
+    margin: 0;
+  }
+
+  &__item {
+    &__title {
+      font-size: 1.3em;
+      color: #2a2626;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: start;
+
+      &::first-letter {
+        text-transform: capitalize;
+      }
+    }
+
+    &__text {
+      text-align: justify
+    }
+  }
+}

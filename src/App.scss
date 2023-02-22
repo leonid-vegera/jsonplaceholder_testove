@@ -20,6 +20,10 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  background-image: url("https://st2.depositphotos.com/3591429/9018/i/950/depositphotos_90184006-stock-photo-large-group-of-diversity-people.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .App-link {
@@ -36,8 +40,4 @@
   100% {
     transform: translateY(0px);
   }
-}
-
-.users-list {
-  list-style: none;
 }

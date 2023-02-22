@@ -1,13 +1,22 @@
 import React, {useState} from 'react';
-import './App.css';
-import {Route, Routes} from "react-router-dom";
+import './App.scss';
+import {Route, Routes, useLocation, useSearchParams} from "react-router-dom";
 import {UsersList} from "./components/UsersList";
 import {Posts} from "./components/Posts";
+import {Albums} from "./components/Albums";
+import {Modal} from "./utils/Modal";
 
 function App() {
   const [users, setUsers] = useState([]);
   const [checkedUserId, setCheckedUserId] = useState(0);
   const [posts, setPosts] = useState([])
+  const [modalActive, setModalActive] = useState(true);
+  //
+  // const location = useLocation();
+  // console.log('location', location)
+
+  // const [searchParams, setSearchParams] = useSearchParams('');
+  // console.log('searchParams+++', searchParams.get('userId'));
 
   // console.log('checkedUserId', checkedUserId)
 
@@ -28,22 +37,21 @@ function App() {
   //     .then(setUsers)
   // }, [])
 
-  const handlePostsClick = () => {
-    // setCheckedUserId(userId);
-    // getPosts()
-    //     .then(posts => {
-    //       return setPosts(posts.filter(post => post.userId === userId))
-    //     });
-  }
 
   return (
     <div className="App">
       <header className="App-header">
         {/*<img src={logo} className="App-logo" alt="logo" />*/}
         <Routes>
-          <Route path="/" element={<UsersList users={users} handlePostsClick={handlePostsClick} setUsers={setUsers}/>} />
+          {/*<Route path="/" element={<Modal active={modalActive} setActive={setModalActive} />} />*/}
+          <Route path="/" element={<UsersList users={users} setUsers={setUsers} setActive={setModalActive} />} />
           {/*<Route path="posts/:userId" element={<Posts userId={checkedUserId}/>} />*/}
-          <Route path="posts/:userId" element={<Posts />} />
+          <Route path="posts" element={<Posts />} />
+          <Route path="albums" element={
+            <Modal active={modalActive} setActive={setModalActive}>
+              <Albums />
+            </Modal>
+          } />
         </Routes>
         {/*<ul className={"users-list"}>*/}
         {/*  {users.map(user => (*/}
@@ -63,7 +71,7 @@ function App() {
         {/*</ul>*/}
         {/*<Counter />*/}
         {/*<p>*/}
-        {/*  Edit <code>src/App.js</code> and save to reload.*/}
+        {/*  Edit <code>src/App.jsx</code> and save to reload.*/}
         {/*</p>*/}
         {/*<span>*/}
         {/*  <span>Learn </span>*/}
