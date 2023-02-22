@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/jsonplaceholder_testove/static/css/main.beb1e2c1.css",
+    "main.js": "/jsonplaceholder_testove/static/js/main.b1589416.js",
+    "index.html": "/jsonplaceholder_testove/index.html",
+    "main.beb1e2c1.css.map": "/jsonplaceholder_testove/static/css/main.beb1e2c1.css.map",
+    "main.b1589416.js.map": "/jsonplaceholder_testove/static/js/main.b1589416.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.beb1e2c1.css",
+    "static/js/main.b1589416.js"
+  ]
+}
