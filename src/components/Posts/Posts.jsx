@@ -6,14 +6,8 @@ import {Template} from "../../utils/Template";
 
 export function Posts() {
   const [posts, setPosts] = useState([]);
-  // const [userId, setUserId] = useState(0);
   const [searchParams, setSearchParams] = useSearchParams('');
   const userId = +searchParams.get('userId');
-
-  // useEffect(() => {
-  //   setUserId(id);
-  // }, [])
-
 
   useEffect(() => {
     getPosts()

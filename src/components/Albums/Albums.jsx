@@ -5,13 +5,8 @@ import {Template} from "../../utils/Template";
 
 export function Albums() {
   const [albums, setAlbums] = useState([]);
-  const [userId, setUserId] = useState(0);
   const [searchParams, setSearchParams] = useSearchParams('');
-  const id = +searchParams.get('userId');
-
-  useEffect(() => {
-    setUserId(id);
-  }, [])
+  const userId = +searchParams.get('userId');
 
   useEffect(() => {
     getAlbums()

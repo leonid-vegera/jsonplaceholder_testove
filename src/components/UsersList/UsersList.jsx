@@ -4,9 +4,6 @@ import {Link, useSearchParams} from "react-router-dom";
 import './UsersList.scss';
 
 export function UsersList({users, setUsers, setActive}) {
-  // const [userId, setUserId] = useState(0);
-  // const [searchParams, setSearchParams] = useSearchParams('');
-  // console.log('searchParams+++', searchParams.get('userId'));
 
   useEffect(() => {
     getUsers()
