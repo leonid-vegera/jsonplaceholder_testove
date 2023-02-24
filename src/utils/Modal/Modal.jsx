@@ -7,7 +7,7 @@ export const Modal = ({active, setActive, children}) => {
   const navigate = useNavigate();
   const modalCloseHandler = () => {
     setActive(false);
-    navigate(-1);
+    navigate('/');
   }
 
   const closeOnEscape = (event) => {
