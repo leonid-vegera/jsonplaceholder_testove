@@ -7,7 +7,7 @@ import {fetchUsers} from './usersSlice';
 
 export function UsersList({setActive}) {
   const dispatch = useDispatch();
-  const { usersList, loading, error } = useSelector(state => state.users);
+  const { list: usersList, loading, error } = useSelector(state => state.users);
 
   useEffect(() => {
     dispatch(fetchUsers());

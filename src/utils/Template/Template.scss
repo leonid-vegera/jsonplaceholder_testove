@@ -10,7 +10,10 @@
   &__header {
     font-size: 1.6em;
     margin: 0;
-    text-transform: capitalize;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
 
     &::after {
       content: '';

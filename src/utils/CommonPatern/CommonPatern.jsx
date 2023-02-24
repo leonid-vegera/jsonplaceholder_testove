@@ -5,11 +5,13 @@ import {fetchPosts} from "../../features/Posts/postsSlice";
 import {fetchUsers} from "../../features/UsersList/usersSlice";
 import {Template} from "../Template";
 import {fetchAlbums} from "../../features/Albums/albumSlice";
+import {endpoints} from "../../api/endpoints";
 
 export function CommonPattern({title}) {
+  const {posts, albums} = endpoints;
   const dispatch = useDispatch();
   const {list, loading, error} = useSelector(state => state[title]);
-  const {usersList} = useSelector(state => state.users);
+  const {list: usersList} = useSelector(state => state.users);
   const [searchParams, setSearchParams] = useSearchParams('');
   const userId = +searchParams.get('userId');
   const user = usersList.find(user => user.id === userId);
@@ -17,11 +19,11 @@ export function CommonPattern({title}) {
   const username = user?.username;
 
   useEffect(() => {
-    if (title === 'posts') {
+    if (title === posts) {
       dispatch(fetchPosts(userId));
       dispatch(fetchUsers());
     }
-    if (title === 'albums') {
+    if (title === albums) {
       dispatch(fetchAlbums(userId));
     }
   }, [userId])
