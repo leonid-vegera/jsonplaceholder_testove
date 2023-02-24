@@ -1,5 +1,7 @@
 import {request} from "./api";
+import {endpoints} from "./endpoints";
 
 export const getUsers = () => {
-  return request('/users')
+  const {users} = endpoints;
+  return request(`/${users}`)
 }

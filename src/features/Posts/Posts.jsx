@@ -1,7 +1,9 @@
 import React from "react";
 import './Posts.scss'
 import {CommonPattern} from "../../utils/CommonPatern/CommonPatern";
+import {endpoints} from "../../api/endpoints";
 
 export function Posts() {
-  return <CommonPattern title='posts'/>;
+  const {posts} = endpoints;
+  return <CommonPattern title={posts}/>;
 }
